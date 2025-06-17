@@ -1,0 +1,30 @@
+---
+import TimeLine from "./shared/TimeLine.astro";
+import TimeLineItem from "./shared/TimeLineItem.astro";
+import Section from "./shared/Section.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<Section title={t('education')}  id="education">
+    <TimeLine>
+        <TimeLineItem
+            date="2018-09-01"
+            title="Bachelor of Science in Computer Science"
+            description="Graduated with honors from the University of Technology, specializing in software development and data structures."
+            tech={["Java", "Python", "Data Structures"]}
+        />
+        <TimeLineItem
+            date="2020-09-01"
+            title="Master of Science in Software Engineering"
+            description="Completed a master's degree focusing on software architecture and design patterns."
+            tech={["Software Architecture", "Design Patterns"]}
+        />
+        <TimeLineItem
+            date="2022-09-01"
+            title="PhD in Computer Science"
+            description="Currently pursuing a PhD with a focus on artificial intelligence and machine learning."
+            tech={["AI", "Machine Learning", "Deep Learning"]}
+        />
+    </TimeLine>
+</Section>

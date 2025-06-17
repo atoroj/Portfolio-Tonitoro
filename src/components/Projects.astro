@@ -1,0 +1,84 @@
+---
+import SpringIcon from "./Icons/SpringIcon.astro";
+import Angular from "./Icons/AngularIcon.astro";
+import BootstrapIcon from "./Icons/BootstrapIcon.astro";
+import HFIcon from "./Icons/HFIcon.astro";
+import PythonIcon from "./Icons/PythonIcon.astro";
+import PytorchIcon from "./Icons/PytorchIcon.astro";
+import LatexIcon from "./Icons/LatexIcon.astro";
+import IonicIcon from "./Icons/IonicIcon.astro";
+import MySQLIcon from "./Icons/MySQLIcon.astro";
+const TAGS = {
+    SPRING: {
+        name: "Spring",
+        class: "bg-black text-slate-100",
+        icon: SpringIcon,
+    },
+    ANGULAR: {
+        name: "Angular",
+        class: "bg-[#003159] text-slate-100",
+        icon: Angular,
+    },
+    BOOTSTRAP: {
+        name: "Bootstrap",
+        class: "bg-[#563d7c] text-slate-100",
+        icon: BootstrapIcon,
+    },
+    IONIC: {
+        name: "Ionic",
+        class: "bg-[#3880ff] text-slate-100",
+        icon: IonicIcon,
+    },
+    HUGGINGFACE: {
+        name: "Hugging Face",
+        class: "bg-[#f5f5f5] text-slate-800",
+        icon: HFIcon,
+    },
+    PYTHON: {
+        name: "Python",
+        class: "bg-[#3776ab] text-slate-100",
+        icon: PythonIcon,
+    },
+    PYTORCH: {
+        name: "PyTorch",
+        class: "bg-[#EE4C2C] text-slate-100",
+        icon: PytorchIcon,
+    },
+    MYSQL: {
+        name: "MySQL",
+        class: "bg-[#4479A1] text-slate-100",
+        icon: MySQLIcon,
+    },
+    LATEX: {
+        name: "LaTeX",
+        class: "bg-[#008080] text-slate-100",
+        icon: LatexIcon,
+    }
+};
+import Section from "./shared/Section.astro";
+import CardProject from "./shared/CardProject.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Section id="projects" title="Projects">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-lg mx-auto">
+        <CardProject
+            image="/images/torodeporte.png"
+            alt="Toro Deporte"
+            title="Toro Deporte"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum urna..."
+            tech={[TAGS.SPRING, TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.IONIC, TAGS.MYSQL]}
+            link="https://github.com/atoroj/torodeporte"
+        />
+        <CardProject
+            image="/images/torodeporte.png"
+            alt="MiSonGyny Lyrics Detection"
+            title="MiSonGyny IberLEF 2025"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum urna..."
+            tech={[TAGS.HUGGINGFACE, TAGS.PYTHON, TAGS.PYTORCH, TAGS.LATEX]}
+            link="https://github.com/atoroj/Misogyny-Lyrics-Detection-LLMs"
+        />
+    </div>
+</Section>

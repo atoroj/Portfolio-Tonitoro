@@ -1,0 +1,30 @@
+---
+import TimeLine from "./shared/TimeLine.astro";
+import TimeLineItem from "./shared/TimeLineItem.astro";
+import Section from "./shared/Section.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Section title={t('work')} id="work">
+    <TimeLine>
+        <TimeLineItem
+            date="2021-01-01"
+            title="Software Engineer at Tech Solutions Inc."
+            description="Developed scalable web applications using React and Node.js, improving performance by 30%."
+            tech={["React", "Node.js", "JavaScript"]}
+        />
+        <TimeLineItem
+            date="2022-06-01"
+            title="Senior Developer at Innovatech Ltd."
+            description="Led a team of developers to create a microservices architecture, enhancing system reliability and scalability."
+            tech={["Microservices", "Docker", "Kubernetes"]}
+        />
+        <TimeLineItem
+            date="2023-03-01"
+            title="Lead Software Engineer at Future Tech Corp."
+            description="Architecting solutions for large-scale applications, focusing on cloud-native technologies and DevOps practices."
+            tech={["Cloud Computing", "DevOps", "AWS"]}
+        />
+    </TimeLine>

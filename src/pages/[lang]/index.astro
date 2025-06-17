@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Me from '../../components/Me.astro';
+import About from '../../components/About.astro';
+import Projects from '../../components/Projects.astro';
+import Education from '../../components/Education.astro';
+import Work from '../../components/Work.astro';
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Me />
+	<Work />
+	<Education />
+	<Projects />
+	<About />
+</Layout>

@@ -1,0 +1,14 @@
+---
+import Section from "./shared/Section.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Section id="about" title={t('about')}>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum
+        urna quis magna lobortis, eget finibus urna vestibulum. Sed nec ex non
+        justo dictum venenatis. Fusce nec purus nec mauris posuere malesuada.
+    </p>
+</Section>

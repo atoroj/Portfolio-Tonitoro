@@ -1,0 +1,46 @@
+---
+interface TechTag {
+  name: string;
+  class: string;
+  icon: any; // o puedes usar AstroComponent si quieres más precisión
+}
+interface Props {
+  image: string;
+  alt: string;
+  title: string;
+  description: string;
+  tech?: TechTag[];
+  link?: string;
+}
+const { image, alt, title, description, tech = [], link } = Astro.props;
+---
+
+<div class="border border-slate-500 rounded-sm overflow-hidden shadow-sm">
+  <div class="relative h-48 w-full overflow-hidden flex items-center justify-center bg-white">
+    <img src={image} alt={alt} class="h-full object-cover pt-1" />
+  </div>
+  <div class="p-4 text-left">
+    <h3 class="text-lg font-medium mb-2 text-slate-900">{title}</h3>
+    <hr class="mb-4 border-gray-300" />
+    <p class="text-sm text-slate-800 mb-4">{description}</p>
+
+    <div class="grid grid-cols-3 gap-2 mb-4">
+  {
+    tech.map(tag => (
+      <span class={`flex items-center gap-x-2 px-2 py-1 rounded-full text-xs font-semibold ${tag.class}`}>
+        <tag.icon class="size-5" />
+        {tag.name}
+      </span>
+    ))
+  }
+</div>
+
+    {link &&
+      <div class="flex gap-4 text-xl">
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    }
+  </div>
+</div>
