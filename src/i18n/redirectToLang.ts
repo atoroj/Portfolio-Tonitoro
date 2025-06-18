@@ -16,7 +16,7 @@ export function redirectToPreferredLang(acceptLangHeader: string | null): Respon
   }
 
   return new Response(null, {
-    status: 302,
+    status: 308,
     headers: {
       Location: `/${redirectLang}`,
     },
