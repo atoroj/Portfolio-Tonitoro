@@ -1,47 +1,63 @@
 export const languages = {
-  en: 'English',
-  es: 'Español',
+    en: 'English',
+    es: 'Español',
 }
 
 export const defaultLang = 'es';
 export const showDefaultLang = true;
 export const ui = {
-    en:{
+    en: {
         'work': 'Work experience',
         'education': 'Education',
         'about': 'About me',
         'projects': 'Projects',
         'cv': 'View CV',
         'contact': 'Contact',
-        work_label:{
-            
-        },
-        education_label:{
-
-        },
-        projects_label:{
-        },
-        about_label:{
-
-        },
+        'me_text': 'Hello! I am Toni, a Software Engineer from a small town called Ubrique, in Cádiz. I have worked on real projects and developed a solid foundation thanks to numerous practical challenges during my training. Currently, I am particularly interested in backend development and artificial intelligence, and I am looking for new opportunities to continue growing and adding value with what I do.',
+        'about_text': 'Since I was a child, I have had a great passion for computer science. When the time came to decide what to study, I did not hesitate, I trained as a developer. After a year of work experience, I confirmed that I was on the right path, I decided to take a step further to become an engineer. Now I am about to finish my studies and I am looking forward to return to the labor market and continue growing professionally.',
+        "torodeporte_description": "ToroDeporte is a web platform for managing the sales of sports products. Developed with <strong>Spring Boot</strong> on the backend and <strong>Angular</strong> on the frontend, it uses <strong>MySQL</strong> as the database. It allows efficient management of products, orders, and users through a modern and responsive interface.",
+        "misongyny_description": "Participation in the MiSonGyny competition at <strong>IberLEF 2025</strong>, focused on the automatic detection of misogyny in Spanish song lyrics. I developed a text classification system using large language models <strong>(LLMs)</strong> fine-tuned with LoRA, applying preprocessing, fine-tuning, and ensemble techniques. <strong>Achieved 2nd place</strong> in both tasks of the challenge, competing with deep learning and advanced NLP-based solutions.",
+        'education_sevilla_title': 'Multiplatform Application Development',
+        'education_sevilla_description': 'Higher Degree in Multiplatform Application Development, where I learned Java, front-end development with HTML, CSS, and Angular, as well as database design and management. It was my first experience applying these skills in practical projects.',
+        'education_sevilla_sitename': 'Salesianas Maria Auxiliadora - Sevilla, Spain',
+        'education_riga_title': 'Bachelor\'s Degree in Computer Science',
+        'education_riga_sitename': 'Riga Technical University - Riga, Latvia',
+        'education_riga_description': 'Academic year at Riga Technical University, where I participated in group projects with international teams. This experience allowed me to work in collaborative environments and gain fluency in the use of technical English applied to software development.',
+        'education_huelva_title': 'Bachelor\'s Degree in Computer Engineering',
+        'education_huelva_sitename': 'University of Huelva - Huelva, Spain',
+        'education_huelva_description': 'Bachelor\'s Degree in Computer Engineering from the University of Huelva, where I developed object-oriented programming and web application projects. I specialized in key subjects such as databases, system architecture, and development methodologies. In the final stage, I conducted research on the use of language models (LLMs) applied to natural language processing.',
+        'work_pielubrique': 'Collaboration in a small business online store',
+        'work_pielubrique_description': 'Management of an online store, responsible for uploading and updating products, stock control, and coordinating shipments.',
+        'work_fujitsu': 'Frontend Developer',
+        'work_fujitsu_description': 'Experience at Fujitsu, where I mainly participated in a frontend project with Angular for managing corporate devices. I also collaborated in the development of two mobile applications with React: one focused on supporting breast cancer patients, and another for managing public transport in a large Spanish city.',
+        'work_mode': 'Vending machine restocker',
+        'work_mode_description': 'Vending machine restocker, responsible for stock management and machine maintenance.',
     },
-    es:{
+    es: {
         'work': 'Experiencia laboral',
         'education': 'Educación',
         'about': 'Sobre mí',
         'projects': 'Proyectos',
         'cv': 'Ver CV',
         'contact': 'Contacto',
-        work_label:{
-            
-        },
-        education_label:{
-
-        },
-        projects_label:{
-        },
-        about_label:{
-
-        },
+        'me_text': '¡Hola! Soy Toni, Ingeniero de Software de un pequeño pueblo llamado Ubrique, en Cádiz. He trabajado en proyectos reales y he desarrollado una base sólida gracias a numerosos retos prácticos durante mi formación. Actualmente me interesan especialmente el desarrollo backend y la inteligencia artificial, y estoy en búsqueda de nuevas oportunidades donde seguir creciendo y aportar valor con lo que hago.',
+        'about_text': 'Desde pequeño he sentido una gran pasión por la informática. Cuando llegó el momento de decidir qué estudiar, no lo dudé, me formé como desarrollador. Tras un año de experiencia laboral, confirmé que estaba en el camino correcto, decidí dar un paso más para convertirme en ingeniero. Ahora estoy a punto de finalizar mis estudios y con muchas ganas de volver al mercado laboral y seguir creciendo profesionalmente.',
+        'torodeporte_description': 'ToroDeporte es un portal web para la gestión de ventas de productos deportivos. Desarrollado con Spring Boot en el backend y Angular en el frontend, utiliza MySQL como base de datos. Permite gestionar productos, pedidos y usuarios de forma eficiente desde una interfaz moderna y responsiva.',
+        'misongyny_description': 'Participación en la competición MiSonGyny de <strong>IberLEF 2025</strong>, centrada en la detección automática de misoginia en letras de canciones en español. Desarrollé un sistema de clasificación de texto utilizando modelos de lenguaje grandes <strong>(LLMs)</strong> ajustados con LoRA, aplicando técnicas de preprocesamiento, fine-tuning y ensemble. <strong>Obtuve el 2º puesto</strong> en ambas tareas del reto, compitiendo con soluciones basadas en aprendizaje profundo y PLN avanzado.',
+        'education_sevilla_title': 'Técnico superior en Desarrollo de Aplicaciones Multiplataforma',
+        'education_sevilla_description': 'Grado Superior en Desarrollo de Aplicaciones Multiplataforma, donde aprendí Java, desarrollo front-end con HTML, CSS y Angular, así como diseño y gestión de bases de datos. Fue mi primera experiencia aplicando estos conocimientos en proyectos prácticos.',
+        'education_sevilla_sitename': 'Salesianas Maria Auxiliadora - Sevilla, España',
+        'education_riga_title': 'Bacherlor\'s Degree in Computer Science',
+        'education_riga_sitename': 'Universidad Técnica de Riga - Riga, Letonia',
+        'education_riga_description': 'Curso académico en la Universidad Técnica de Riga, donde participé en proyectos en grupo con equipos internacionales. Esta experiencia me permitió trabajar en entornos colaborativos y ganar fluidez en el uso del inglés técnico aplicado al desarrollo de software.',
+        'education_huelva_title': 'Grado en Ingeniería Informática',
+        'education_huelva_sitename': 'Universidad de Huelva - Huelva, España',
+        'education_huelva_description': 'Grado en Ingeniería Informática por la Universidad de Huelva, donde desarrollé proyectos de programación orientada a objetos y aplicaciones web. Me especialicé en asignaturas clave como bases de datos, arquitectura de sistemas y metodologías de desarrollo. En la etapa final, realicé una investigación sobre el uso de modelos de lenguaje (LLMs) aplicados al procesamiento del lenguaje natural.',
+        'work_pielubrique': 'Colaboración en tienda online de pequeña empresa',
+        'work_pielubrique_description': 'Gestión de tienda online, encargándome de la subida y actualización de productos, control de stock y coordinación de envíos.',
+        'work_fujitsu': 'Desarrollador Frontend',
+        'work_fujitsu_description': 'Experiencia en Fujitsu, donde participé principalmente en un proyecto frontend con Angular para la gestión de dispositivos corporativos. También colaboré en el desarrollo de dos aplicaciones móviles con React: una orientada al acompañamiento de pacientes con cáncer de mama, y otra para la gestión del transporte público en una gran ciudad española.',
+        'work_mode': 'Reponedor de máquinas expendedoras',
+        'work_mode_description': 'Reponedor de máquinas expendedoras, encargado de la gestión de stock y mantenimiento de las máquinas.',
     }
 } as const;

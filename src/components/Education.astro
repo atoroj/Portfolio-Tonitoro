@@ -9,21 +9,24 @@ const t = useTranslations(lang);
 <Section title={t('education')}  id="education">
     <TimeLine>
         <TimeLineItem
-            date="2018-09-01"
-            title="Bachelor of Science in Computer Science"
-            description="Graduated with honors from the University of Technology, specializing in software development and data structures."
+            date="2017-2019"
+            title={t('education_sevilla_title')}
+            sitename={t('education_sevilla_sitename')}
+            description={t('education_sevilla_description')}
             tech={["Java", "Python", "Data Structures"]}
         />
         <TimeLineItem
-            date="2020-09-01"
-            title="Master of Science in Software Engineering"
-            description="Completed a master's degree focusing on software architecture and design patterns."
+            date="2022-2023"
+            title={t('education_riga_title')}
+            sitename={t('education_riga_sitename')}
+            description={t('education_riga_description')}
             tech={["Software Architecture", "Design Patterns"]}
         />
         <TimeLineItem
-            date="2022-09-01"
-            title="PhD in Computer Science"
-            description="Currently pursuing a PhD with a focus on artificial intelligence and machine learning."
+            date="2020-2025"
+            title={t('education_huelva_title')}
+            sitename={t('education_huelva_sitename')}
+            description={t('education_huelva_description')}
             tech={["AI", "Machine Learning", "Deep Learning"]}
         />
     </TimeLine>

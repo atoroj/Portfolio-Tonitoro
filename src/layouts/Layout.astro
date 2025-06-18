@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl } from "../i18n/utils";
 import Header from "../components/shared/Header.astro";
 import Footer from "../components/shared/Footer.astro";
 const lang = getLangFromUrl(Astro.url);
@@ -17,7 +17,7 @@ const lang = getLangFromUrl(Astro.url);
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 		/>
-		<title>Tonitoro | Developer</title>
+		<title>Toni Toro | Developer</title>
 	</head>
 	<body class="cursor-default bg-white dark:bg-slate-900">
 		<div class="absolute inset-0 -z-10 h-full w-full">
@@ -26,10 +26,11 @@ const lang = getLangFromUrl(Astro.url);
 				<div
 					class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
 				>
-				<div
+					<div
 						class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px]
 				rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"
-					></div>
+					>
+					</div>
 				</div>
 			</div>
 			<!-- 🌚 Visible solo en modo oscuro -->
@@ -45,12 +46,10 @@ const lang = getLangFromUrl(Astro.url);
 				</div>
 			</div>
 		</div>
+		<Header />
+		<main class="mx-auto px-4 pb-5 max-w-screen-sm md:max-w-screen-md">
+			<slot />
+			<Footer />
+		</main>
 	</body>
-	<Header />
-	<main
-		class="mx-auto px-4 pb-5 max-w-screen-sm md:max-w-screen-md"
-	>
-		<slot />
-		<Footer/>
-	</main>
 </html>

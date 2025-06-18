@@ -1,12 +1,13 @@
 ---
 import SocialPill from './shared/SocialPill.astro';
-import GithubIcon from './Icons/GithubIcon.astro';
-import EmailIcon from './Icons/EmailIcon.astro';
-import LinkedInIcon from './Icons/LinkedinIcon.astro';
+import GithubIcon from './icons/GithubIcon.astro';
+import EmailIcon from './icons/EmailIcon.astro';
+import LinkedInIcon from './icons/LinkedinIcon.astro';
 import Section from "./shared/Section.astro";
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const meDescription = t('me_text');
 ---
 <section id="me" class="section text-center">
     <div class="flex justify-center">
@@ -20,10 +21,8 @@ const t = useTranslations(lang);
         Antonio Toro Jaén
     </h1>
     <hr class="mx-auto w-2xs border-t mb-6 border-slate-400" />
-    <p class="mb-6 text-slate-900 dark:text-slate-50">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum
-        urna quis magna lobortis, eget finibus urna vestibulum. Sed nec ex non
-        justo dictum venenatis. Fusce nec purus nec mauris posuere malesuada
+    <p class="mb-6 text-slate-900 dark:text-slate-50 text-justify text-pretty">
+        {meDescription}
     </p>
     <div class="flex justify-center">
         <ul>

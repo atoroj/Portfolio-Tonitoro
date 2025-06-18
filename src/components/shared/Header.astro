@@ -1,5 +1,5 @@
 ---
-import ToniToroIcon from "../Icons/ToniToroIcon.astro";
+import ToniToroIcon from "../icons/ToniToroIcon.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -47,7 +47,7 @@ const t = useTranslations(lang);
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 px-6 py-2 rounded-md bg-slate-800  text-slate-100 font-semibold
-                    shadow-[0_0_30px_rgba(0,0,0,0.05)] shadow-fuchsia-400
+                    shadow-[0_0_30px_rgba(0,0,0,0.05)] shadow-fuchsia-300
                     hover:shadow-[0_0_60px_rgba(0,0,0,0.15)] hover:shadow-fuchsia-400
                     transition duration-300 dark:bg-slate-100 dark:text-slate-900"
             >

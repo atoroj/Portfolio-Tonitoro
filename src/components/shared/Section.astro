@@ -2,12 +2,12 @@
 const { id, title } = Astro.props;
 ---
 
-<section id={id} class="section mt-20 text-center">
-  <h2 class="text-4xl mb-6 text-slate-900 dark:text-slate-50">
+<section id={id} class="section mt-20 ">
+  <h2 class="text-4xl mb-6 text-slate-900 dark:text-slate-50 text-center">
     {title}
   </h2>
   <hr class="mx-auto w-2xs border-t mb-6 border-slate-400" />
-  <div class="mt-6 text-slate-900 dark:text-slate-50 text-pretty">
+  <div class="mt-6 text-slate-900 dark:text-slate-50 text-pretty text-justify">
     <slot/>
   </div>
 </section>
