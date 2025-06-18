@@ -1,8 +1,0 @@
----
-import { redirectToPreferredLang } from "../i18n/redirectToLang";
-
-//const acceptLang = Astro.request.headers.get("accept-language"); // Descomentar si se quiere redirigir según el idioma preferido del navegador
-//return redirectToPreferredLang(acceptLang);
-import { defaultLang } from "../i18n/ui"; //Por fallos, se importa el idioma por defecto directamente
-Astro.redirect(`/${defaultLang}`, 308);
----

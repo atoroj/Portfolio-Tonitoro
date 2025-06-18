@@ -7,5 +7,11 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  redirects: {
+    '/': {
+      status: 308,
+      destination: '/es',
+    },
+  },
 });
