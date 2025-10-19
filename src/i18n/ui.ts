@@ -14,7 +14,7 @@ export const ui = {
         'cv': 'View CV',
         'contact': 'Contact',
         'me_text': 'Hello! I am Toni, a Software Engineer from a small town called Ubrique, in Cádiz. I have worked on real projects and developed a solid foundation thanks to numerous practical challenges during my training. Currently, I am particularly interested in backend development and artificial intelligence, and I am looking for new opportunities to continue growing and adding value with what I do.',
-        'about_text': 'Since I was a child, I have had a great passion for computer science. When the time came to decide what to study, I did not hesitate, I trained as a developer. After a year of work experience, I confirmed that I was on the right path, I decided to take a step further to become an engineer. Now I am about to finish my studies and I am looking forward to return to the labor market and continue growing professionally.',
+        'about_text': 'Since I was a child, I have had a great passion for computer science. When the time came to decide what to study, I did not hesitate, I trained as a developer. After a year of work experience, I confirmed that I was on the right path, I decided to take a step further to become an engineer.',
         "torodeporte_description": "ToroDeporte is a web platform for managing the sales of sports products. Developed with <strong>Spring Boot</strong> on the backend and <strong>Angular</strong> on the frontend, it uses <strong>MySQL</strong> as the database. It allows efficient management of products, orders, and users through a modern and responsive interface.",
         "misongyny_description": "Participation in the MiSonGyny competition at <strong>IberLEF 2025</strong>, focused on the automatic detection of misogyny in Spanish song lyrics. I developed a text classification system using large language models <strong>(LLMs)</strong> fine-tuned with LoRA, applying preprocessing, fine-tuning, and ensemble techniques. <strong>Achieved 2nd place</strong> in both tasks of the challenge, competing with deep learning and advanced NLP-based solutions.",
         'education_sevilla_title': 'Multiplatform Application Development',
@@ -32,6 +32,9 @@ export const ui = {
         'work_fujitsu_description': 'Experience at Fujitsu, where I mainly participated in a frontend project with Angular for managing corporate devices. I also collaborated in the development of two mobile applications with React: one focused on supporting breast cancer patients, and another for managing public transport in a large Spanish city.',
         'work_mode': 'Vending machine restocker',
         'work_mode_description': 'Vending machine restocker, responsible for stock management and machine maintenance.',
+        "work_tragsatec": "Full-stack Developer",
+        "work_tragsatec_description": "Full-stack Developer at Tragsatec, where I work on web application development using technologies such as Angular and Java with frameworks like Spring and Lombok. I participate in all phases of the development process, from design to implementation, for clients in the public sector.",
+        "present": "Present",
     },
     es: {
         'work': 'Experiencia laboral',
@@ -41,7 +44,7 @@ export const ui = {
         'cv': 'Ver CV',
         'contact': 'Contacto',
         'me_text': '¡Hola! Soy Toni, Ingeniero de Software de un pequeño pueblo llamado Ubrique, en Cádiz. He trabajado en proyectos reales y he desarrollado una base sólida gracias a numerosos retos prácticos durante mi formación. Actualmente me interesan especialmente el desarrollo backend y la inteligencia artificial, y estoy en búsqueda de nuevas oportunidades donde seguir creciendo y aportar valor con lo que hago.',
-        'about_text': 'Desde pequeño he sentido una gran pasión por la informática. Cuando llegó el momento de decidir qué estudiar, no lo dudé, me formé como desarrollador. Tras un año de experiencia laboral, confirmé que estaba en el camino correcto, decidí dar un paso más para convertirme en ingeniero. Ahora estoy a punto de finalizar mis estudios y con muchas ganas de volver al mercado laboral y seguir creciendo profesionalmente.',
+        'about_text': 'Desde pequeño he sentido una gran pasión por la informática. Cuando llegó el momento de decidir qué estudiar, no lo dudé, me formé como desarrollador. Tras un año de experiencia laboral, confirmé que estaba en el camino correcto, decidí dar un paso más para convertirme en ingeniero.',
         'torodeporte_description': 'ToroDeporte es un portal web para la gestión de ventas de productos deportivos. Desarrollado con Spring Boot en el backend y Angular en el frontend, utiliza MySQL como base de datos. Permite gestionar productos, pedidos y usuarios de forma eficiente desde una interfaz moderna y responsiva.',
         'misongyny_description': 'Participación en la competición MiSonGyny de <strong>IberLEF 2025</strong>, centrada en la detección automática de misoginia en letras de canciones en español. Desarrollé un sistema de clasificación de texto utilizando modelos de lenguaje grandes <strong>(LLMs)</strong> ajustados con LoRA, aplicando técnicas de preprocesamiento, fine-tuning y ensemble. <strong>Obtuve el 2º puesto</strong> en ambas tareas del reto, compitiendo con soluciones basadas en aprendizaje profundo y PLN avanzado.',
         'education_sevilla_title': 'Técnico superior en Desarrollo de Aplicaciones Multiplataforma',
@@ -59,5 +62,8 @@ export const ui = {
         'work_fujitsu_description': 'Experiencia en Fujitsu, donde participé principalmente en un proyecto frontend con Angular para la gestión de dispositivos corporativos. También colaboré en el desarrollo de dos aplicaciones móviles con React: una orientada al acompañamiento de pacientes con cáncer de mama, y otra para la gestión del transporte público en una gran ciudad española.',
         'work_mode': 'Reponedor de máquinas expendedoras',
         'work_mode_description': 'Reponedor de máquinas expendedoras, encargado de la gestión de stock y mantenimiento de las máquinas.',
+        'work_tragsatec': 'Full-stack Developer',
+        'work_tragsatec_description': 'Desarrollador Full-stack en Tragsatec, donde trabajo en el desarrollo de aplicaciones web utilizando tecnologías como Angular y Java con frameworks como Spring y Lombock. Participo en todas las fases del desarrollo, desde el diseño hasta la implementación para clientes del sector público.',
+        "present": "Actualidad",
     }
 } as const;

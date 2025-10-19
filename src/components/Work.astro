@@ -10,12 +10,6 @@ const t = useTranslations(lang);
 <Section title={t('work')} id="work">
     <TimeLine>
         <TimeLineItem
-            date="2017"
-            title={t('work_pielubrique')}
-            sitename="Piel de Ubrique - Ubrique, Cádiz"
-            description={t('work_pielubrique_description')}
-        />
-        <TimeLineItem
             date="2019-2020"
             title={t('work_fujitsu')}
             sitename="Fujitsu Technology Solutions - Sevilla"
@@ -23,9 +17,9 @@ const t = useTranslations(lang);
             tech={["Microservices", "Docker", "Kubernetes"]}
         />
         <TimeLineItem
-            date="2023-2024"
-            title={t('work_mode')}
-            sitename="Vending Romero Ramos - Ubrique, Cádiz"
-            description={t('work_mode_description')}
+            date={`2025-${t('present')}`}
+            title={t('work_tragsatec')}
+            sitename="Tragsatec - Sevilla"
+            description={t('work_tragsatec_description')}
         />
     </TimeLine>

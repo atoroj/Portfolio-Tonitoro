@@ -1,12 +1,19 @@
 ---
 import Section from "./shared/Section.astro";
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Section id="about" title={t('about')}>
-    <p>
-        {t('about_text')}
-    </p>
+<Section id="about" title={t("about")}>
+    <div class="flex items-center gap-6">
+        <img
+            src="/images/atoropeque.png"
+            alt="Profile Picture"
+            class="w-2xs h-xs rounded-2xl object-cover shadow-[8px_8px_8px_rgba(0,0,0,0)] shadow-fuchsia-200"
+        />
+        <p>
+            {t("about_text")}
+        </p>
+    </div>
 </Section>

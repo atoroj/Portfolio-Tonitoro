@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
     --clr-1: #B33791;
     --clr-2: #F79F1F;
