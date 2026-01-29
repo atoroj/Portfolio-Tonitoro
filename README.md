@@ -1,48 +1,57 @@
-# Astro Starter Kit: Basics
+# 👨‍💻 Toni Toro - Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+![Astro](https://img.shields.io/badge/astro-%232C205F.svg?style=for-the-badge&logo=astro&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+> Mi rincón personal en la web. Un portafolio minimalista, multilingüe y de alto rendimiento construido con **Astro** para mostrar mi trayectoria en Ingeniería de Software e IA.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🔗 **Ver Demo:** [tonitoro.dev](https://tonitoro.dev)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+---
 
-## 🚀 Project Structure
+## 🚀 Sobre el Proyecto
 
-Inside of your Astro project, you'll see the following folders and files:
+Este repositorio contiene el código fuente de mi portafolio personal.
+
+### Características Clave
+* 🌍 **Internacionalización (i18n):** Soporte nativo inglés/español mediante enrutamiento dinámico (`/[lang]/`).
+* ⚡ **Middleware:** Gestión de redirecciones y detección de idioma preferido del usuario.
+* 🧩 **Arquitectura Modular:** Secciones encapsuladas en componentes independientes (`About`, `Work`, `Projects`).
+* 🎨 **Diseño Responsivo**
+
+---
+
+## 🛠️ Stack Tecnológico
+
+* **Core:** [Astro 5](https://astro.build/)
+* **Lenguaje:** TypeScript
+* **Estilos:** Tailwind CSS
+* **Despliegue:** Vercel
+
+---
+
+## 📂 Estructura del Proyecto
+
+El proyecto sigue una estructura organizada para facilitar la escalabilidad y la gestión de idiomas:
 
 ```text
 /
-├── public/
-│   └── favicon.svg
+├── public/               # Assets estáticos
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── assets/           # Recursos optimizados (SVGs, Backgrounds)
+│   ├── components/
+│   │   ├── icons/        # Colección de iconos SVG
+│   │   └── shared/       # Secciones modulares (About, Me, Work, Education)
+│   ├── i18n/             # Lógica de traducción
+│   │   ├── ui.ts         # Diccionarios de textos (Labels)
+│   │   ├── utils.ts      # Funciones de utilidad para i18n
+│   │   └── redirectToLang.ts
+│   ├── layouts/          # Plantilla base (Layout.astro)
+│   ├── pages/
+│   │   └── [lang]/       # Enrutamiento dinámico (index.astro)
+│   ├── styles/           # Hoja de estilos global
+│   └── middleware.mjs    # Interceptación de peticiones e idioma
+├── astro.config.mjs      # Configuración del framework
+└── tsconfig.json         # Configuración de TypeScript
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
