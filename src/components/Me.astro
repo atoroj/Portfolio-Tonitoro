@@ -1,11 +1,14 @@
 ---
+import GithubIcon from './icons/GithubIcon.astro';
+import LinkedinIcon from './icons/LinkedinIcon.astro';
+import EmailIcon from './icons/EmailIcon.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const socials = [
-    { href: 'https://github.com/atoroj', label: 'github' },
-    { href: 'https://www.linkedin.com/in/antoniotorojaen/', label: 'linkedin' },
-    { href: 'mailto:atorojaen@gmail.com', label: 'email' },
+    { href: 'https://github.com/atoroj', label: 'GitHub', icon: GithubIcon },
+    { href: 'https://www.linkedin.com/in/antoniotorojaen/', label: 'LinkedIn', icon: LinkedinIcon },
+    { href: 'mailto:atorojaen@gmail.com', label: 'Email', icon: EmailIcon },
 ];
 const stats = [
     { value: t('stat_iberlef_value'), label: t('stat_iberlef_label') },
@@ -32,9 +35,10 @@ const stats = [
                         href={social.href}
                         target={social.href.startsWith('http') ? '_blank' : undefined}
                         rel="noopener noreferrer"
-                        class="inline-block rounded-md border border-line px-4 py-2.5 font-mono text-[13px] transition-colors hover:border-accent hover:text-accent"
+                        class="inline-flex items-center gap-2 rounded-md border border-line px-4 py-2.5 font-mono text-[13px] transition-colors hover:border-accent hover:text-accent"
                     >
-                        {social.label} ↗
+                        <social.icon class="h-4 w-4" />
+                        {social.label}
                     </a>
                 </li>
             ))}

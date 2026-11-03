@@ -1,6 +1,31 @@
+---
+import GithubIcon from '../icons/GithubIcon.astro';
+import LinkedinIcon from '../icons/LinkedinIcon.astro';
+import EmailIcon from '../icons/EmailIcon.astro';
+const socials = [
+    { href: 'https://github.com/atoroj', label: 'GitHub', icon: GithubIcon },
+    { href: 'https://www.linkedin.com/in/antoniotorojaen/', label: 'LinkedIn', icon: LinkedinIcon },
+    { href: 'mailto:atorojaen@gmail.com', label: 'Email', icon: EmailIcon },
+];
+---
 <footer class="mt-28 border-t border-line">
-    <div class="mx-auto flex max-w-[1120px] flex-wrap justify-between gap-3 px-4 py-7 font-mono text-[13px] text-muted sm:px-8">
+    <div class="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-4 px-4 py-7 font-mono text-[13px] text-muted sm:px-8">
         <span>© {new Date().getFullYear()} Toni Toro</span>
-        <a href="mailto:atorojaen@gmail.com" class="transition-colors hover:text-accent">atorojaen@gmail.com</a>
+        <ul class="flex items-center gap-2">
+            {socials.map((social) => (
+                <li>
+                    <a
+                        href={social.href}
+                        target={social.href.startsWith('http') ? '_blank' : undefined}
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
+                        title={social.label}
+                        class="flex h-10 w-10 items-center justify-center rounded-md transition-colors hover:bg-chip hover:text-accent"
+                    >
+                        <social.icon class="h-[18px] w-[18px]" />
+                    </a>
+                </li>
+            ))}
+        </ul>
     </div>
 </footer>
