@@ -1,107 +1,35 @@
 ---
-import SpringIcon from "./icons/SpringIcon.astro";
-import Angular from "./icons/AngularIcon.astro";
-import BootstrapIcon from "./icons/BootstrapIcon.astro";
-import HFIcon from "./icons/HFIcon.astro";
-import PythonIcon from "./icons/PythonIcon.astro";
-import PytorchIcon from "./icons/PytorchIcon.astro";
-import LatexIcon from "./icons/LatexIcon.astro";
-import IonicIcon from "./icons/IonicIcon.astro";
-import MySQLIcon from "./icons/MySQLIcon.astro";
-import AstroIcon from "./icons/AstroIcon.astro";
-import TailwindIcon from "./icons/TailwindIcon.astro";
-const TAGS = {
-    SPRING: {
-        name: "Spring Boot",
-        class: "border-2 border-[#6DB33F] bg-slate-100 text-slate-900",
-        icon: SpringIcon,
-    },
-    ANGULAR: {
-        name: "Angular",
-        class: "border-2 border-[#C3002F] bg-slate-100 text-slate-900",
-        icon: Angular,
-    },
-    BOOTSTRAP: {
-        name: "Bootstrap",
-        class: "border-2 border-[#563d7c] bg-slate-100 text-slate-900",
-        icon: BootstrapIcon,
-    },
-    IONIC: {
-        name: "Ionic",
-        class: "border-2 border-[#3880ff] bg-slate-100 text-slate-900",
-        icon: IonicIcon,
-    },
-    HUGGINGFACE: {
-        name: "Hugging Face",
-        class: "border-2 border-[#FEE133] bg-slate-100 text-slate-900",
-        icon: HFIcon,
-    },
-    PYTHON: {
-        name: "Python",
-        class: "border-2 border-[#3776AB] bg-slate-100 text-slate-900",
-        icon: PythonIcon,
-    },
-    PYTORCH: {
-        name: "PyTorch",
-        class: "border-2 border-[#EE4C2C] bg-slate-100 text-slate-900",
-        icon: PytorchIcon,
-    },
-    MYSQL: {
-        name: "MySQL",
-        class: "border-2 border-[#4479A1] bg-slate-100 text-slate-900",
-        icon: MySQLIcon,
-    },
-    LATEX: {
-        name: "LaTeX",
-        class: "border-2 border-[#008080] bg-slate-100 text-slate-900",
-        icon: LatexIcon,
-    },
-    ASTRO: {
-        name: "Astro",
-        class: "border-2 border-[#FF5D01] bg-slate-100 text-slate-900",
-        icon: AstroIcon,
-    },
-    TAILWIND: {
-        name: "Tailwind CSS",
-        class: "border-2 border-[#38BDF8] bg-slate-100 text-slate-900",
-        icon: TailwindIcon,
-    },
-};
 import Section from "./shared/Section.astro";
 import CardProject from "./shared/CardProject.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const misogynyDescription = t('misongyny_description');
-const torodeporteDescription = t('torodeporte_description');
 ---
 
-<Section id="projects" title={t('projects')}>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-lg mx-auto">
+<Section id="projects" title={t('projects')} index={2}>
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         <CardProject
-            image="/images/torodeporte.png"
-            alt="Toro Deporte"
-            title="Toro Deporte"
-            description={torodeporteDescription}
-            tech={[TAGS.SPRING, TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.IONIC, TAGS.MYSQL]}
-            link="https://github.com/atoroj/torodeporte"
-        />
-        <CardProject
-            image="/images/mysongynylogo.webp"
-            alt="MiSonGyny Lyrics Detection"
-            title="MiSonGyny IberLEF 2025"
-            description={misogynyDescription}
-            tech={[TAGS.HUGGINGFACE, TAGS.PYTHON, TAGS.PYTORCH, TAGS.LATEX]}
+            kind={t('kind_thesis')}
+            status={t('status_iberlef')}
+            title="MiSonGyny"
+            description={t('misongyny_description')}
+            tech={["PyTorch", "Hugging Face", "LoRA"]}
             link="https://github.com/atoroj/Misogyny-Lyrics-Detection-LLMs"
         />
-        <!--<CardProject
-            image="/images/tonittorologo.svg"
-            alt="Toro Deporte"
-            title="Toni Toro Portfolio"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum urna..."
-            tech={[TAGS.ASTRO, TAGS.TAILWIND]}
-            link=""
-        />-->
+        <CardProject
+            kind={t('kind_personal')}
+            status="github"
+            title="Rydr"
+            description={t('rydr_description')}
+            tech={["FastAPI", "SQLAlchemy", "Swift"]}
+            link="https://github.com/atoroj/Rydr"
+        />
+        <CardProject
+            kind={t('kind_personal')}
+            status={t('in_progress')}
+            title="RoadDamage AI"
+            description={t('roaddamage_description')}
+            tech={["PyTorch", "YOLO", "OpenCV"]}
+        />
     </div>
 </Section>

@@ -1,0 +1,28 @@
+---
+import Section from "./shared/Section.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const groups = [
+    { title: t("skills_ai"), items: ["Python", "PyTorch", "Hugging Face", "Transformers", "NLP", "LLMs", "Fine-tuning", "RAG"] },
+    { title: t("skills_backend"), items: ["Java", "Spring Boot", "FastAPI", "REST APIs", "SQL", "Angular", "Git"] },
+    { title: t("skills_tools"), items: ["Docker", "Qdrant", "Haystack", "Azure DevOps", "CI/CD"] },
+    { title: t("skills_languages"), items: t("skills_languages_list").split(", ") },
+];
+---
+
+<Section id="skills" title={t("skills")} index={3}>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {groups.map((group) => (
+            <div>
+                <h3 class="mb-3.5 font-mono text-[13px] font-normal text-accent">// {group.title}</h3>
+                <ul>
+                    {group.items.map((item) => (
+                        <li class="border-b border-line py-2 text-[15px]">{item}</li>
+                    ))}
+                </ul>
+            </div>
+        ))}
+    </div>
+</Section>

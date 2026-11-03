@@ -1,22 +1,37 @@
 ---
-const { date, title, description, sitename, tech = [] } = Astro.props;
+interface Props {
+    date: string;
+    title: string;
+    sitename: string;
+    description?: string;
+    tech?: string[];
+    /** Show the place next to the title ("Role @ Company") instead of below it. */
+    inline?: boolean;
+}
+const { date, title, description, sitename, tech = [], inline = false } = Astro.props;
 ---
-<li class="text-left mb-5 ms-4">
-    <div
-        class="absolute w-3 h-3 bg-slate-400 rounded-full mt-1.5 -start-1.5 border border-slate-50 dark:border-gray-900 dark:bg-slate-600"
-    >
+<li class="flex flex-col gap-2 border-t border-line py-7 md:flex-row md:gap-6">
+    <time class="shrink-0 pt-1 font-mono text-[13px] text-muted md:w-48">{date}</time>
+    <div class="min-w-0 flex-1">
+        {inline ? (
+            <h3 class="font-display text-xl font-semibold">
+                {title} <span class="text-accent">@ {sitename}</span>
+            </h3>
+        ) : (
+            <>
+                <h3 class="font-display text-lg font-semibold">{title}</h3>
+                <p class="mt-1.5 text-sm text-muted">{sitename}</p>
+            </>
+        )}
+        {description && (
+            <p class="mt-3 max-w-3xl text-[15px] leading-relaxed text-pretty text-muted">{description}</p>
+        )}
+        {tech.length > 0 && (
+            <ul class="mt-4 flex flex-wrap gap-2">
+                {tech.map((item) => (
+                    <li class="rounded bg-chip px-2.5 py-1 font-mono text-xs">{item}</li>
+                ))}
+            </ul>
+        )}
     </div>
-    <time
-        class="mb-1 text-sm font-normal leading-none text-slate-600 dark:text-slate-300"
-        >{date}</time
-    >
-    <h3 class="text-lg font-semibold text-slate-900  dark:text-slate-100">
-        {title}
-    </h3>
-    <p class="text-md font-semibold text-slate-800 dark:text-slate-200">
-        {sitename}
-    </p>
-    <p class="mb-4 text-base font-normal text-slate-700 dark:text-slate-300">
-        {description}
-    </p>
 </li>

@@ -7,19 +7,23 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Section title={t('work')} id="work">
+<Section title={t('work')} id="work" index={1}>
     <TimeLine>
         <TimeLineItem
-            date="2019-2020"
-            title={t('work_fujitsu')}
-            sitename="Fujitsu Technology Solutions - Sevilla"
-            description={t('work_fujitsu_description')}
-            tech={["Microservices", "Docker", "Kubernetes"]}
+            inline
+            date={`${t('sep')} 2025 — ${t('present')}`}
+            title={t('work_tragsatec')}
+            sitename="Tragsatec"
+            description={t('work_tragsatec_description')}
+            tech={["Java", "Spring Boot", "Python", "Angular", "Docker", "Haystack", "Qdrant", "GIS"]}
         />
         <TimeLineItem
-            date={`2025-${t('present')}`}
-            title={t('work_tragsatec')}
-            sitename="Tragsatec - Sevilla"
-            description={t('work_tragsatec_description')}
+            inline
+            date={`${t('sep')} 2019 — ${t('sep')} 2020`}
+            title={t('work_fujitsu')}
+            sitename="Fujitsu"
+            description={t('work_fujitsu_description')}
+            tech={["Angular", "React Native", "Git", "SCRUM"]}
         />
     </TimeLine>
+</Section>
