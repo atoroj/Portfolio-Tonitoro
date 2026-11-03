@@ -1,55 +1,27 @@
 ---
-interface TechTag {
-  name: string;
-  class: string;
-  icon: any; // o puedes usar AstroComponent si quieres más precisión
-}
 interface Props {
-  image: string;
-  alt: string;
   title: string;
+  kind: string;
+  status: string;
   description: string;
-  tech?: TechTag[];
+  tech: string[];
   link?: string;
 }
-const { image, alt, title, description, tech = [], link } = Astro.props;
+const { title, kind, status, description, tech, link } = Astro.props;
 ---
 
-<div class="border border-slate-500 rounded-sm overflow-hidden shadow-lg">
-  <div
-    class="relative h-48 w-full overflow-hidden flex items-center justify-center border-b border-slate-500 bg-slate-100"
-  >
-    <img src={image} alt={alt} class="h-full w-full object-contain" />
+<article class="relative flex flex-col gap-3.5 rounded-[10px] border border-line bg-surface p-6 transition-colors hover:border-accent">
+  <div class="flex items-center justify-between font-mono text-xs text-muted">
+    <span>{kind}</span>
+    <span class="text-accent">{status}</span>
   </div>
-
-  <div class="p-4 text-justify text-pretty">
-    <h3 class="text-lg font-medium mb-2 text-slate-900 dark:text-slate-100" >
-      {title}
-    </h3>
-    <hr class="mb-4 border-gray-300" />
-    <p class="text-sm text-slate-800 dark:text-slate-200 mb-4 " set:html={description}/>
-
-    <div class="grid grid-cols-3 gap-2 mb-4">
-      {
-        tech.map((tag) => (
-          <span
-            class={`flex items-center gap-x-2 px-2 py-1 rounded-full text-xs font-semibold ${tag.class}`}
-          >
-            <tag.icon class="size-5" />
-            {tag.name}
-          </span>
-        ))
-      }
-    </div>
-
-    {
-      link && (
-        <div class="flex gap-4 text-xl">
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github" />
-          </a>
-        </div>
-      )
-    }
-  </div>
-</div>
+  <h3 class="font-display text-[22px] font-semibold">
+    {link ? (
+      <a href={link} target="_blank" rel="noopener noreferrer" class="after:absolute after:inset-0 after:content-['']">
+        {title} <span class="text-accent" aria-hidden="true">↗</span>
+      </a>
+    ) : title}
+  </h3>
+  <p class="flex-1 text-sm leading-relaxed text-pretty text-muted">{description}</p>
+  <p class="font-mono text-xs text-accent">{tech.join(' · ')}</p>
+</article>

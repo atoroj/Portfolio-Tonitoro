@@ -6,28 +6,27 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<Section title={t('education')}  id="education">
+<Section title={t('education')} id="education" index={4}>
     <TimeLine>
         <TimeLineItem
-            date="2017-2019"
-            title={t('education_sevilla_title')}
-            sitename={t('education_sevilla_sitename')}
-            description={t('education_sevilla_description')}
-            tech={["Java", "Python", "Data Structures"]}
+            date={`2026 — ${t('present')}`}
+            title={t('education_unir_title')}
+            sitename={t('education_unir_sitename')}
         />
         <TimeLineItem
-            date="2022-2023"
-            title={t('education_riga_title')}
-            sitename={t('education_riga_sitename')}
-            description={t('education_riga_description')}
-            tech={["Software Architecture", "Design Patterns"]}
-        />
-        <TimeLineItem
-            date="2020-2025"
+            date="2020 — 2025"
             title={t('education_huelva_title')}
             sitename={t('education_huelva_sitename')}
-            description={t('education_huelva_description')}
-            tech={["AI", "Machine Learning", "Deep Learning"]}
+        />
+        <TimeLineItem
+            date="2022 — 2023"
+            title={t('education_riga_title')}
+            sitename={t('education_riga_sitename')}
+        />
+        <TimeLineItem
+            date="2017 — 2019"
+            title={t('education_sevilla_title')}
+            sitename={t('education_sevilla_sitename')}
         />
     </TimeLine>
 </Section>

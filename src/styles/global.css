@@ -1,13 +1,63 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+/* Light theme: "Terminal" (paper + olive). Dark theme: midnight + amber. */
+:root {
+  color-scheme: light;
+  --bg: #F6F7F2;
+  --surface: #FFFFFF;
+  --line: #DCE1D5;
+  --fg: #121712;
+  --muted: #525E54;
+  --accent: #3F6212;
+  --on-accent: #FFFFFF;
+  --chip: #E9EDE1;
 }
 
-:root {
-    --clr-1: #B33791;
-    --clr-2: #F79F1F;
-    --clr-3: #A3CB38;
-    --clr-4: #4A69BD;
-    --clr-5: #C562AF;
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0F0F17;
+  --surface: #181826;
+  --line: #272739;
+  --fg: #F1F0F5;
+  --muted: #A6A4B8;
+  --accent: #F5B841;
+  --on-accent: #1A1300;
+  --chip: #232336;
+}
+
+/* Without JavaScript, follow the system preference. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #0F0F17;
+    --surface: #181826;
+    --line: #272739;
+    --fg: #F1F0F5;
+    --muted: #A6A4B8;
+    --accent: #F5B841;
+    --on-accent: #1A1300;
+    --chip: #232336;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-chip: var(--chip);
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }

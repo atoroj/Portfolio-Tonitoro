@@ -1,15 +1,33 @@
 ---
 import { languages } from '../../i18n/ui';
-import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils';
+import { getLangFromUrl, useTranslatedPath, useTranslations } from '../../i18n/utils';
 
-const lang = getLangFromUrl(Astro.url) ?? "";
-const translatedPath = useTranslatedPath(lang);
+const currentLang = getLangFromUrl(Astro.url);
+const translatedPath = useTranslatedPath(currentLang);
+const t = useTranslations(currentLang);
 ---
 
-{Object.entries(languages).map(([lang, label]) => (
-  <li>
-    <a href={translatedPath("/", lang)} class="hover:underline me-4 md:me-6">
-      {label}
+<nav aria-label={t('lang_label')} class="flex overflow-hidden rounded-md border border-line font-mono text-xs">
+  {Object.keys(languages).map((lang) => (
+    <a
+      href={translatedPath('/', lang)}
+      hreflang={lang}
+      aria-current={lang === currentLang ? 'page' : undefined}
+      class:list={[
+        'px-2.5 py-2 uppercase transition-colors',
+        lang === currentLang ? 'bg-chip text-fg' : 'text-muted hover:text-fg',
+      ]}
+    >
+      {lang}
     </a>
-  </li>
-))}
+  ))}
+</nav>
+
+<script>
+  // Keep the section you are reading when switching language.
+  document.querySelectorAll<HTMLAnchorElement>('a[hreflang]').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (location.hash) link.hash = location.hash;
+    });
+  });
+</script>

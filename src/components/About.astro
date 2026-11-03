@@ -5,14 +5,15 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Section id="about" title={t("about")}>
-    <div class="flex items-center gap-6">
+<Section id="about" title={t("about")} index={5}>
+    <div class="flex flex-col items-center gap-8 md:flex-row md:items-start">
         <img
             src="/images/atoropeque.png"
-            alt="Profile Picture"
-            class="w-2xs h-xs rounded-2xl object-cover shadow-[8px_8px_8px_rgba(0,0,0,0)] shadow-fuchsia-200"
+            alt="Antonio Toro Jaén"
+            loading="lazy"
+            class="w-48 shrink-0 rounded-[10px] object-cover md:w-56"
         />
-        <p>
+        <p class="max-w-3xl text-[17px] leading-relaxed text-pretty text-muted">
             {t("about_text")}
         </p>
     </div>

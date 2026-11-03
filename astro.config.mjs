@@ -9,9 +9,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   redirects: {
-    '/': {
-      status: 308,
-      destination: '/es',
-    },
+    // Old English URL: English now lives at "/".
+    '/en': '/',
   },
 });
