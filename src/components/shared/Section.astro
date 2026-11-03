@@ -1,13 +1,17 @@
 ---
-const { id, title } = Astro.props;
+interface Props {
+  id: string;
+  title: string;
+  index: number;
+}
+const { id, title, index } = Astro.props;
 ---
 
-<section id={id} class="section mt-20 ">
-  <h2 class="text-4xl mb-6 text-slate-900 dark:text-slate-50 text-center">
+<section id={id} class="pt-20 md:pt-28">
+  <h2 class="mb-10 flex items-baseline gap-4 font-display text-[28px] font-bold sm:text-[32px]">
+    <span class="font-mono text-base text-accent">{String(index).padStart(2, '0')}.</span>
     {title}
+    <span class="h-px flex-1 bg-line" aria-hidden="true"></span>
   </h2>
-  <hr class="mx-auto w-2xs border-t mb-6 border-slate-400" />
-  <div class="mt-6 text-slate-900 dark:text-slate-50 text-pretty text-justify">
-    <slot/>
-  </div>
+  <slot />
 </section>

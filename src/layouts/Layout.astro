@@ -1,55 +1,48 @@
 ---
 import "../styles/global.css";
-import { getLangFromUrl } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Header from "../components/shared/Header.astro";
 import Footer from "../components/shared/Footer.astro";
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const site = "https://tonitoro.me";
 ---
 
 <!doctype html>
 <html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={t("meta_description")} />
+		<!-- Apply the saved/system theme before first paint (no flash). -->
+		<script is:inline>
+			(function () {
+				var theme;
+				try { theme = localStorage.getItem("theme"); } catch (e) {}
+				if (theme !== "light" && theme !== "dark") {
+					theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+				}
+				document.documentElement.dataset.theme = theme;
+			})();
+		</script>
 		<link rel="icon" type="image/svg+xml" href="/images/ttlogo.svg" />
+		<link rel="alternate" hreflang="en" href={`${site}/`} />
+		<link rel="alternate" hreflang="es" href={`${site}/es/`} />
+		<link rel="alternate" hreflang="x-default" href={`${site}/`} />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
 		/>
-		<title>Toni Toro | Developer</title>
+		<title>Toni Toro | Software Engineer · ML & AI</title>
 	</head>
-	<body class="cursor-default bg-white dark:bg-slate-900">
-		<div class="absolute inset-0 -z-10 h-full w-full">
-			<!-- 🌞 Visible solo en modo claro -->
-			<div class="block dark:hidden relative h-full w-full bg-white">
-				<div
-					class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
-				>
-					<div
-						class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px]
-				rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"
-					>
-					</div>
-				</div>
-			</div>
-			<!-- 🌚 Visible solo en modo oscuro -->
-			<div class="hidden dark:block relative h-full w-full bg-slate-900">
-				<div
-					class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-				>
-					<div
-						class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px]
-				rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"
-					>
-					</div>
-				</div>
-			</div>
-		</div>
+	<body class="cursor-default bg-bg font-sans text-fg antialiased transition-colors">
 		<Header />
-		<main class="mx-auto px-4 pb-5 max-w-screen-sm md:max-w-screen-md">
+		<main id="top" class="mx-auto max-w-[1120px] px-4 sm:px-8">
 			<slot />
-			<Footer />
 		</main>
+		<Footer />
 	</body>
 </html>
