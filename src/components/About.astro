@@ -7,12 +7,16 @@ const t = useTranslations(lang);
 
 <Section id="about" title={t("about")} index={5}>
     <div class="flex flex-col items-center gap-8 md:flex-row md:items-start">
-        <img
-            src="/images/atoropeque.png"
-            alt="Antonio Toro Jaén"
-            loading="lazy"
-            class="w-48 shrink-0 rounded-[10px] object-cover md:w-56"
-        />
+        <!-- Same framing as the hero photo: offset accent border behind the image. -->
+        <div class="relative w-48 shrink-0 me-3.5 mb-3.5 md:w-56">
+            <div class="absolute inset-0 translate-x-3.5 translate-y-3.5 rounded-[10px] border-2 border-accent" aria-hidden="true"></div>
+            <img
+                src="/images/atoropeque.png"
+                alt="Antonio Toro Jaén"
+                loading="lazy"
+                class="relative aspect-square w-full rounded-[10px] object-cover"
+            />
+        </div>
         <p class="max-w-3xl text-[17px] leading-relaxed text-pretty text-muted">
             {t("about_text")}
         </p>

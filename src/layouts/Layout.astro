@@ -5,7 +5,7 @@ import Header from "../components/shared/Header.astro";
 import Footer from "../components/shared/Footer.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const site = "https://tonitoro.me";
+const site = "https://tonitoro.dev";
 ---
 
 <!doctype html>
@@ -25,7 +25,9 @@ const site = "https://tonitoro.me";
 				document.documentElement.dataset.theme = theme;
 			})();
 		</script>
-		<link rel="icon" type="image/svg+xml" href="/images/ttlogo.svg" />
+		<link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/tonitoro-logo-32.png" />
+		<link rel="apple-touch-icon" href="/images/logo/apple-touch-icon.png" />
 		<link rel="alternate" hreflang="en" href={`${site}/`} />
 		<link rel="alternate" hreflang="es" href={`${site}/es/`} />
 		<link rel="alternate" hreflang="x-default" href={`${site}/`} />

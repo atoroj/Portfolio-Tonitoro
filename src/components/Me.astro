@@ -6,13 +6,12 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const socials = [
-    { href: 'https://github.com/atoroj', label: 'GitHub', icon: GithubIcon },
-    { href: 'https://www.linkedin.com/in/atorojaen/', label: 'LinkedIn', icon: LinkedinIcon },
-    { href: 'mailto:atorojaen@gmail.com', label: 'Email', icon: EmailIcon },
+    { href: 'https://github.com/atoroj', label: 'atoroj', icon: GithubIcon },
+    { href: 'https://www.linkedin.com/in/atorojaen/', label: 'atorojaen', icon: LinkedinIcon },
+    { href: 'mailto:atorojaen@gmail.com', label: 'atorojaen@gmail.com', icon: EmailIcon },
 ];
 const stats = [
     { value: t('stat_iberlef_value'), label: t('stat_iberlef_label') },
-    { value: t('stat_paper_value'), label: t('stat_paper_label') },
     { value: t('stat_master_value'), label: t('stat_master_label') },
 ];
 ---
@@ -56,7 +55,7 @@ const stats = [
     </div>
 </section>
 
-<ul class="grid grid-cols-1 overflow-hidden rounded-[10px] border border-line bg-surface sm:grid-cols-3">
+<ul class="grid grid-cols-1 overflow-hidden rounded-[10px] border border-line bg-surface sm:grid-cols-2">
     {stats.map((stat) => (
         <li class="border-line p-6 not-last:border-b sm:not-last:border-b-0 sm:not-last:border-r">
             <p class="font-display text-4xl font-bold text-accent">{stat.value}</p>

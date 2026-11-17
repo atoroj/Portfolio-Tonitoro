@@ -1,42 +1,45 @@
 @import "tailwindcss";
 
-/* Light theme: "Terminal" (paper + olive). Dark theme: midnight + amber. */
+/* "Paper" theme. Light: printed paper + red ink. Dark: night reading, warm ink. */
 :root {
   color-scheme: light;
-  --bg: #F6F7F2;
+  --bg: #FBFAF6;
   --surface: #FFFFFF;
-  --line: #DCE1D5;
-  --fg: #121712;
-  --muted: #525E54;
-  --accent: #3F6212;
+  --line: #DDD8CC;
+  --rule: #1C1B19;
+  --fg: #1C1B19;
+  --muted: #5E5A52;
+  --accent: #9A2E1C;
   --on-accent: #FFFFFF;
-  --chip: #E9EDE1;
+  --chip: #F1EEE6;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0F0F17;
-  --surface: #181826;
-  --line: #272739;
-  --fg: #F1F0F5;
-  --muted: #A6A4B8;
-  --accent: #F5B841;
-  --on-accent: #1A1300;
-  --chip: #232336;
+  --bg: #16150F;
+  --surface: #1E1D17;
+  --line: #34322A;
+  --rule: #D9D4C7;
+  --fg: #EDE9DF;
+  --muted: #A9A396;
+  --accent: #E58C70;
+  --on-accent: #1A0E08;
+  --chip: #26241D;
 }
 
 /* Without JavaScript, follow the system preference. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     color-scheme: dark;
-    --bg: #0F0F17;
-    --surface: #181826;
-    --line: #272739;
-    --fg: #F1F0F5;
-    --muted: #A6A4B8;
-    --accent: #F5B841;
-    --on-accent: #1A1300;
-    --chip: #232336;
+    --bg: #16150F;
+    --surface: #1E1D17;
+    --line: #34322A;
+    --rule: #D9D4C7;
+    --fg: #EDE9DF;
+    --muted: #A9A396;
+    --accent: #E58C70;
+    --on-accent: #1A0E08;
+    --chip: #26241D;
   }
 }
 
@@ -44,6 +47,7 @@
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-line: var(--line);
+  --color-rule: var(--rule);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
