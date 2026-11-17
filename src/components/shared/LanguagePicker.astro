@@ -7,19 +7,22 @@ const translatedPath = useTranslatedPath(currentLang);
 const t = useTranslations(currentLang);
 ---
 
-<nav aria-label={t('lang_label')} class="flex overflow-hidden rounded-md border border-line font-mono text-xs">
-  {Object.keys(languages).map((lang) => (
-    <a
-      href={translatedPath('/', lang)}
-      hreflang={lang}
-      aria-current={lang === currentLang ? 'page' : undefined}
-      class:list={[
-        'px-2.5 py-2 uppercase transition-colors',
-        lang === currentLang ? 'bg-chip text-fg' : 'text-muted hover:text-fg',
-      ]}
-    >
-      {lang}
-    </a>
+<nav aria-label={t('lang_label')} class="flex items-center font-mono text-[13px]">
+  {Object.keys(languages).map((lang, i) => (
+    <>
+      {i > 0 && <span class="px-1 text-muted" aria-hidden="true">/</span>}
+      <a
+        href={translatedPath('/', lang)}
+        hreflang={lang}
+        aria-current={lang === currentLang ? 'page' : undefined}
+        class:list={[
+          'inline-flex min-h-10 items-center uppercase transition-colors',
+          lang === currentLang ? 'text-fg' : 'text-muted hover:text-accent',
+        ]}
+      >
+        {lang}
+      </a>
+    </>
   ))}
 </nav>
 

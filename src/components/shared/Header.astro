@@ -10,32 +10,31 @@ const links = [
     { href: '#projects', label: t('nav_projects') },
     { href: '#skills', label: t('nav_skills') },
     { href: '#education', label: t('nav_education') },
+    { href: '#about', label: t('nav_about') },
 ];
 ---
-<header class="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md">
-    <nav class="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-8">
-        <a href={home} class="font-mono text-base font-semibold text-fg">
-            toni<span class="text-accent">.</span>toro
-        </a>
-        <ul class="hidden items-center gap-7 font-mono text-[13px] text-muted lg:flex">
-            {links.map((link, i) => (
-                <li>
-                    <a href={link.href} class="transition-colors hover:text-fg">
-                        <span class="text-accent">{String(i + 1).padStart(2, '0')}</span> {link.label}
-                    </a>
-                </li>
-            ))}
-        </ul>
-        <div class="flex items-center gap-3">
-            <ThemeToggle />
+<header class="sticky top-0 z-50 border-b border-line bg-bg/90 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-[1120px] items-center justify-between gap-x-7 px-4 py-2.5 font-mono text-[13px] sm:px-8">
+        <div class="flex items-center gap-x-7">
+            <a href={home} class="text-muted transition-colors hover:text-fg">tonitoro.dev</a>
+            <ul class="hidden items-center gap-x-[22px] lg:flex">
+                {links.map((link, i) => (
+                    <li>
+                        <a href={link.href} class="text-fg transition-colors hover:text-accent"><span class="text-accent">{String(i + 1).padStart(2, '0')}</span> {link.label}</a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+        <div class="flex items-center gap-x-[22px]">
             <LanguagePicker />
+            <ThemeToggle />
             <a
                 href={t('cv_file')}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="rounded-md bg-accent px-3.5 py-2 font-mono text-[13px] font-semibold text-on-accent transition-opacity hover:opacity-90"
+                class="inline-flex min-h-10 items-center border border-rule px-3.5 text-fg transition-colors hover:bg-fg hover:text-bg"
             >
-                {t('cv')}
+                PDF ↓ CV
             </a>
         </div>
     </nav>
