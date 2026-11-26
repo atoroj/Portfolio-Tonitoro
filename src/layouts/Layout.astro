@@ -6,6 +6,55 @@ import Footer from "../components/shared/Footer.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const site = "https://tonitoro.dev";
+const canonical = lang === "en" ? `${site}/` : `${site}/${lang}/`;
+const title = t("meta_title");
+const description = t("meta_description");
+const ogImage = `${site}/images/atorojaen.png`;
+
+// Structured data so Google links every variant of the name to this site.
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Person",
+			"@id": `${site}/#person`,
+			name: "Antonio Toro Jaén",
+			alternateName: ["Toni Toro", "Antonio Toro", "Antonio Toro Jaen", "Tonitoro"],
+			givenName: "Antonio",
+			familyName: "Toro Jaén",
+			url: `${site}/`,
+			image: ogImage,
+			jobTitle: lang === "es" ? "Ingeniero de Software" : "Software Engineer",
+			description,
+			worksFor: { "@type": "Organization", name: "Tragsatec" },
+			alumniOf: [
+				{ "@type": "CollegeOrUniversity", name: "Universidad de Huelva" },
+				{ "@type": "CollegeOrUniversity", name: "Riga Technical University" },
+				{ "@type": "CollegeOrUniversity", name: "Universidad Internacional de La Rioja (UNIR)" },
+			],
+			knowsAbout: ["Software Engineering", "Machine Learning", "Artificial Intelligence", "Natural Language Processing", "Computer Vision"],
+			sameAs: ["https://github.com/atoroj", "https://www.linkedin.com/in/atorojaen/"],
+		},
+		{
+			"@type": "WebSite",
+			"@id": `${site}/#website`,
+			url: `${site}/`,
+			name: "Toni Toro",
+			alternateName: ["Antonio Toro Jaén", "tonitoro.dev"],
+			inLanguage: ["en", "es"],
+			author: { "@id": `${site}/#person` },
+		},
+		{
+			"@type": "ProfilePage",
+			"@id": `${canonical}#profile`,
+			url: canonical,
+			name: title,
+			inLanguage: lang,
+			isPartOf: { "@id": `${site}/#website` },
+			mainEntity: { "@id": `${site}/#person` },
+		},
+	],
+};
 ---
 
 <!doctype html>
@@ -13,7 +62,30 @@ const site = "https://tonitoro.dev";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content={t("meta_description")} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content="Antonio Toro Jaén" />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+		<link rel="canonical" href={canonical} />
+		<!-- Open Graph / social previews -->
+		<meta property="og:type" content="profile" />
+		<meta property="og:site_name" content="Toni Toro" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1032" />
+		<meta property="og:image:height" content="1032" />
+		<meta property="og:image:alt" content="Antonio Toro Jaén (Toni Toro)" />
+		<meta property="og:locale" content={lang === "es" ? "es_ES" : "en_US"} />
+		<meta property="og:locale:alternate" content={lang === "es" ? "en_US" : "es_ES"} />
+		<meta property="profile:first_name" content="Antonio" />
+		<meta property="profile:last_name" content="Toro Jaén" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 		<!-- Apply the saved/system theme before first paint (no flash). -->
 		<script is:inline>
 			(function () {
@@ -28,6 +100,7 @@ const site = "https://tonitoro.dev";
 		<link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/tonitoro-logo-32.png" />
 		<link rel="apple-touch-icon" href="/images/logo/apple-touch-icon.png" />
+		<link rel="sitemap" href="/sitemap.xml" />
 		<link rel="alternate" hreflang="en" href={`${site}/`} />
 		<link rel="alternate" hreflang="es" href={`${site}/es/`} />
 		<link rel="alternate" hreflang="x-default" href={`${site}/`} />
@@ -38,7 +111,6 @@ const site = "https://tonitoro.dev";
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
 		/>
-		<title>Toni Toro | Software Engineer · ML & AI</title>
 	</head>
 	<body class="cursor-default bg-bg font-sans text-fg antialiased transition-colors">
 		<Header />
