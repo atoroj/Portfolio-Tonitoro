@@ -2,15 +2,21 @@
 import GithubIcon from '../icons/GithubIcon.astro';
 import LinkedinIcon from '../icons/LinkedinIcon.astro';
 import EmailIcon from '../icons/EmailIcon.astro';
+import HuggingFaceIcon from '../icons/HuggingFaceIcon.astro';
+import MaltIcon from '../icons/MaltIcon.astro';
+import TecnoempleoIcon from '../icons/TecnoempleoIcon.astro';
 const socials = [
     { href: 'https://github.com/atoroj', label: 'GitHub', icon: GithubIcon },
     { href: 'https://www.linkedin.com/in/atorojaen/', label: 'LinkedIn', icon: LinkedinIcon },
+    { href: 'https://huggingface.co/atorojaen', label: 'Hugging Face', icon: HuggingFaceIcon },
+    { href: 'https://www.malt.com/profile/tonitoro', label: 'Malt', icon: MaltIcon },
+    { href: 'https://www.tecnoempleo.com/antonio-toro-jaen.mpt', label: 'Tecnoempleo', icon: TecnoempleoIcon },
     { href: 'mailto:atorojaen@gmail.com', label: 'Email', icon: EmailIcon },
 ];
 ---
 <footer class="mt-28 border-t border-line">
     <div class="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-4 px-4 py-7 font-mono text-[13px] text-muted sm:px-8">
-        <span>© {new Date().getFullYear()} Toni Toro</span>
+        <span>© {new Date().getFullYear()} Antonio Toro Jaén</span>
         <ul class="flex items-center gap-2">
             {socials.map((social) => (
                 <li>
