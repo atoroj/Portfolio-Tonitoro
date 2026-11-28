@@ -2,12 +2,18 @@
 import GithubIcon from './icons/GithubIcon.astro';
 import LinkedinIcon from './icons/LinkedinIcon.astro';
 import EmailIcon from './icons/EmailIcon.astro';
+import HuggingFaceIcon from './icons/HuggingFaceIcon.astro';
+import MaltIcon from './icons/MaltIcon.astro';
+import TecnoempleoIcon from './icons/TecnoempleoIcon.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const socials = [
     { href: 'https://github.com/atoroj', label: 'atoroj', icon: GithubIcon },
     { href: 'https://www.linkedin.com/in/atorojaen/', label: 'atorojaen', icon: LinkedinIcon },
+    { href: 'https://huggingface.co/atorojaen', label: 'atorojaen', icon: HuggingFaceIcon },
+    { href: 'https://www.malt.com/profile/tonitoro', label: 'tonitoro', icon: MaltIcon },
+    { href: 'https://www.tecnoempleo.com/antonio-toro-jaen.mpt', label: 'tecnoempleo', icon: TecnoempleoIcon },
     { href: 'mailto:atorojaen@gmail.com', label: 'atorojaen@gmail.com', icon: EmailIcon },
 ];
 const stats = [
@@ -47,7 +53,7 @@ const stats = [
         <div class="absolute inset-0 translate-x-3.5 translate-y-3.5 rounded-[10px] border-2 border-accent" aria-hidden="true"></div>
         <img
             src="/images/atorojaen.png"
-            alt="Antonio Toro Jaén (Toni Toro)"
+            alt={lang === "es" ? "Antonio Toro Jaén (Antonio Toro Jaen)" : "Antonio Toro Jaen (Antonio Toro Jaén)"}
             width="280"
             height="280"
             class="relative h-full w-full rounded-[10px] object-cover"
